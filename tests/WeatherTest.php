@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the itdream/weather.
+ *
+ * (c) itdream <z@it1.me>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Itdream\Weather\Tests;
 
 use GuzzleHttp\Client;
@@ -13,7 +22,6 @@ use PHPUnit\Framework\TestCase;
 
 class WeatherTest extends TestCase
 {
-
     // 检查 $type 参数
     public function testGetWeatherWithInvalidType()
     {
@@ -63,7 +71,7 @@ class WeatherTest extends TestCase
                 'city' => '深圳',
                 'output' => 'json',
                 'extensions' => 'base',
-            ]
+            ],
         ])->andReturn($response);
 
         // 将 `getHttpClient` 方法替换为上面创建的 http client 为返回值的模拟方法。

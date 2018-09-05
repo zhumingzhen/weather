@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the itdream/weather.
+ *
+ * (c) itdream <z@it1.me>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Itdream\Weather;
 
 class ServiceProvider extends \Illuminate\Support\ServiceProvider
@@ -8,7 +17,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
 
     public function register()
     {
-        $this->app->singleton(Weather::class, function(){
+        $this->app->singleton(Weather::class, function () {
             return new Weather(config('services.weather.key'));
         });
 
