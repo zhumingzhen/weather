@@ -1,4 +1,5 @@
 # weather
+[![Build Status](https://travis-ci.org/zhumingzhen/weather.svg?branch=master)](https://travis-ci.org/zhumingzhen/weather)
 
 A weather SDK
 
