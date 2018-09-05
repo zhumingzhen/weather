@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the itdream/weather.
+ *
+ * (c) itdream <z@it1.me>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Itdream\Weather;
 
 use GuzzleHttp\Client;
@@ -9,6 +18,7 @@ use Itdream\Weather\Exceptions\InvalidArgumentException;
 class Weather
 {
     protected $key;
+
     protected $guzzleOptions = [];
 
     public function __construct($key)
@@ -57,7 +67,7 @@ class Weather
             'extensions' => $type,
         ]);
 
-        try{
+        try {
             // 3. 调用 getHttpClient 获取实例，并调用该实例的 `get` 方法，
             // 传递参数为两个：$url、['query' => $query]，
             $response = $this->getHttpClient()->get($url, [
@@ -72,7 +82,5 @@ class Weather
             // 并将调用异常作为 $previousException 传入。
             throw new HttpException($e->getMessage(), $e->getCode(), $e);
         }
-
     }
-
 }
